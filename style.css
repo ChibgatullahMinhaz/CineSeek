@@ -18,6 +18,15 @@
     text-align: center;
     text-decoration: none;
 }
+.btn{
+    padding: 0.7rem 1rem ;
+    border-radius: 2rem 2rem 2rem 2rem;
+    transition: all .5s;
+}
+.btn:hover{
+    background-color: var(--Grayish-Violet);
+    color:#fff;
+}
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
 /* reset code ends  */
@@ -66,6 +75,43 @@ nav{
 .nav_link:active{
     color: var(--Dark-Violet);
 }
+/* navbar ends */
+
+/* headers */
+.header{
+    display: flex;
+    max-width: 90%;
+    margin: auto;
+}
+.header_text{
+    flex: 1;
+    text-align: justify;
+    margin-top: 3rem;
+}
+.header_title{
+    font-size: 4rem;
+    text-align: justify;
+    line-height: 4rem;
+    margin-bottom: 0rem;
+    color: var(--Very-Dark-Blue);
+}
+.header_prag{
+    text-align: justify;
+color: var(--Grayish-Violet);
+}
+.get{
+    background-color: var(--Dark-Violet);
+    color: #fff;
+    font-size: bolder;
+}
+.header_img{
+    flex: 1;
+    margin-top: 3rem;
+}
+.header_img img{
+    max-width: 100%;
+}
+
 /* nav btn starts here */
 #open_btn {
     display: none;
