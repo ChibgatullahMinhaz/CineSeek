@@ -18,6 +18,9 @@
     text-align: center;
     text-decoration: none;
 }
+body{
+    background-color: #F0F1F6;
+}
 .btn{
     padding: 0.7rem 1rem ;
     border-radius: 2rem 2rem 2rem 2rem;
@@ -115,7 +118,7 @@ color: var(--Grayish-Violet);
 
 /* url input starts */
 .url_section{
-    margin: 2rem 0rem;
+    margin: 5rem 0rem;
 }
 .main_url_input{
     display: flex;
@@ -140,6 +143,9 @@ color: var(--Grayish-Violet);
     outline: none;
     border:none ;
     border-radius: 1rem;
+    color: var(--Grayish-Violet);
+    font-weight: bold;
+    opacity: .8;
 }
 .url_buttons{
     margin: auto;
@@ -149,9 +155,124 @@ min-width: 20%;
     color: #fff;
     background: var(--Grayish-Violet);
     padding: 1rem 2rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
 }
 /* urls ends here */
+/* statices */
+.static_Section{
+    max-width: 90%;
+    margin: auto;
+}
+
+.static_container{
+    margin-top: 10rem;
+}
+.static_container h1{
+    font-size: 3rem;
+    line-height: 1rem;
+    text-align: center;
+    font-weight: bolder;
+}
+.static_container p{
+    text-align: center;
+    font-size: 1rem;
+}
+.anlytics{
+    display: flex;
+    gap: 1rem;
+}
+.item1{
+    flex: 1;
+    text-align: justify;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    position: relative;
+    top: 3rem;
+}
+.item1 img{
+    position: absolute;
+    top: -40px;
+    margin-left: 1rem;
+    background-color: var(--Very-Dark-Blue);
+    padding: 1rem;
+    border-radius: 50%;
+
+}
+.item1 h2 {
+    text-align: left;
+    color: var(--Very-Dark-Blue);
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin: 1rem;
+}
+.item1 p{
+    text-align: justify;
+    color: var(--Grayish-Violet);
+    font-size: 0.9rem;
+    margin: 1rem;
+}
+.item2{
+    flex: 1;
+    text-align: justify;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    position: relative;
+    top: 6rem;
+}
+.item2 img{
+    position: absolute;
+    top: -40px;
+    margin-left: 1rem;
+    background-color: var(--Very-Dark-Blue);
+    padding: 1rem;
+    border-radius: 50%;
+
+}
+.item2 h2 {
+    text-align: left;
+    color: var(--Very-Dark-Blue);
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin: 1rem;
+}
+.item2 p{
+    text-align: justify;
+    color: var(--Grayish-Violet);
+    font-size: 0.9rem;
+}
+.item3{
+    flex: 1;
+    text-align: justify;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.6rem;
+    position: relative;
+    top: 10rem;
+}
+.item3 img{
+    position: absolute;
+    top: -50px;
+    margin-left: 1rem;
+    background-color: var(--Very-Dark-Blue);
+    padding: 1rem;
+    border-radius: 50%;
+
+}
+.item3 h2 {
+    text-align: left;
+    color: var(--Very-Dark-Blue);
+    font-size: 1.2rem;
+    font-weight: bolder;
+    margin: 1rem;
+}
+.item3 p{
+    text-align: justify;
+    color: var(--Grayish-Violet);
+    font-size: 0.9rem;
+    margin: 1rem;
+}
 /* nav btn starts here */
 #open_btn {
     display: none;
