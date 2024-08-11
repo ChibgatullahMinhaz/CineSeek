@@ -273,6 +273,69 @@ min-width: 20%;
     font-size: 0.9rem;
     margin: 1rem;
 }
+/* static ends */
+/* booster */
+.booster{
+    margin-top: 17rem;
+    min-height: 13rem;
+    min-width: 100%;
+    background-color: var(--Very-Dark-Blue);
+    background-image: url(images/bg-boost-desktop.svg);
+background-repeat: no-repeat;
+background-size: cover;
+}
+.booster_container{
+    position: relative;
+    top: 60px; 
+    left: 0;
+    line-height: 3rem;
+}
+.booster_container h1{
+color: #fff;
+font-size: 2rem;
+font-weight: bolder;
+
+}
+/* booster */
+/* footer  */
+footer{
+    background: #232027;
+    color: #fff;
+    min-height: 25vw;
+}
+.footer{
+    max-width: 90%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+
+}
+.footer h5{
+    margin-top: 4rem;
+}
+.footer .logo h1{
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+.footer_list{
+    text-align: justify;
+}
+.footer_link{
+    color: var(--Grayish-Violet);
+    font-family: "popins";
+    line-height: 1.7rem;
+}
+
+.sosical_icon {
+    position: relative;
+    top: 70px;
+}
+.sosical_icon img{
+    margin: 0rem 0rem 0rem 1rem;
+}
+/* footer */
 /* nav btn starts here */
 #open_btn {
     display: none;
@@ -328,6 +391,48 @@ position: relative;
     .reg_sec .nav_list{
         margin-bottom: 2rem;
     }
+    .header{
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+        justify-content: center;
+    }
+    .header_text{
+        min-width: 100%;
+    }
+    .header_title{
+        font-size: 3rem;
+    }
+    .header_img img{
+    min-width: 100%;
+        align-items: center;
+    }
+    .main_url_input{
+        display: flex;
+        flex-direction: column;
+    }
+    .static_container h1{
+        line-height: 3rem;
+    }
+    .anlytics{
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding: 2rem 0;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer{
+        flex-direction: column;
+    }
+    .footer h5{
+        text-align: left;
+    }
+    .sosical_icon{
+        height: 20vw;
+        width: 100%;
+        background-color: var(--Very-Dark-Blue);
+    }
+
 }
 @media screen and (max-width:400px) {
     #open_btn{
