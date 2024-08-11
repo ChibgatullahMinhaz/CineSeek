@@ -111,7 +111,47 @@ color: var(--Grayish-Violet);
 .header_img img{
     max-width: 100%;
 }
+/* header ends */
 
+/* url input starts */
+.url_section{
+    margin: 2rem 0rem;
+}
+.main_url_input{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1rem;
+    max-width: 80%;
+    min-height: 30vh;
+    margin: auto;
+    background-color: var(--Very-DarkViolet);
+    background-image: url("images/bg-shorten-desktop.svg");
+    background-repeat: no-repeat;
+}
+.input{
+    width: 100%;
+    margin: auto;
+}
+.input input{
+    width: 80%;
+    align-items: center;
+    text-align: justify;
+    padding: 1rem;
+    outline: none;
+    border:none ;
+    border-radius: 1rem;
+}
+.url_buttons{
+    margin: auto;
+min-width: 20%;
+}
+.url_btn{
+    color: #fff;
+    background: var(--Grayish-Violet);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+}
+/* urls ends here */
 /* nav btn starts here */
 #open_btn {
     display: none;
