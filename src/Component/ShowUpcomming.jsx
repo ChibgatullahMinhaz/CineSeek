@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Populermovies = ({ movie }) => {
+export const ShowUpcomming = ({ movie }) => {
   const { title, release_date, poster_path, vote_average } = movie;
   const baseUrl = `https://image.tmdb.org/t/p/w500/${poster_path}`;
   return (
