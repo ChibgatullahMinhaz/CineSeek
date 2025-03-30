@@ -49,7 +49,7 @@ export const ShowUpcomming = ({ movie }) => {
       {/* DaisyUI Modal */}
       {showPopup && (
         <dialog open className="modal modal-open">
-          <div className="sm:bg-[#242424]  modal-box w-full max-w-none h-screen">
+          <div className="sm:bg-[#242424]  modal-box w-full max-w-none sm:h-screen">
             <div className="grid grid-cols-1 sm:grid-cols-2">
               <img
                 className="mt-4 sm:max-w-sm rounded"
@@ -132,6 +132,7 @@ export const ShowUpcomming = ({ movie }) => {
                 </div>
 
               </div>
+              
             </div>
             <div className="flex justify-between mt-4">
               <button onClick={closePopup} className="btn btn-error">
