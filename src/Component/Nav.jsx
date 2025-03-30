@@ -1,4 +1,4 @@
-import React, { Fragment, Suspense } from "react";
+import React, { Fragment, Suspense, use, useEffect, useState } from "react";
 import "./Nav.css";
 
 import { Loader } from "./Loader";
@@ -28,13 +28,18 @@ const featuredpromise = fetch(
 ).then((res) => res.json());
 
 export const Nav = () => {
-  const handleQuery = (e) => {
-    const query = e.target.value;
-    console.log(query);
-  };
+  const [query, setQuery] = useState("");
+  const [movies, setMovies] = useState([]);
+
+  // searching
+  const Search_url = `https://api.themoviedb.org/3/search/movie?api_key=${api_key}&query=${query}`;
+
+ 
+    const res = fetch(Search_url).then((res) => res.json());
+  
+
   return (
     <Fragment>
-      <Suspense fallback={<Loader></Loader>}>
         <nav className="p-3 flex justify-between items-center shadow-2xl">
           <h1
             id="logo"
@@ -44,18 +49,20 @@ export const Nav = () => {
           </h1>
           <div>
             <input
-              onChange={handleQuery}
+              onChange={(e) => setQuery(e.target.value)}
               type="search"
-              className="input "
+              className="input bg-blue-800 text-white "
               placeholder="Search Movie"
             />
           </div>
         </nav>
+      <Suspense fallback={<Loader></Loader>}>
         <MainContent
           featuredpromise={featuredpromise}
           upcommingmovies={upcommingmovies}
           topratedmoviespromise={topratedmoviespromise}
           populermoviepromies={populermoviepromies}
+          searchPromise ={res}
         ></MainContent>
         <Footer></Footer>
       </Suspense>

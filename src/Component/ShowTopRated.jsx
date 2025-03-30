@@ -19,9 +19,7 @@ export const ShowTopRated = ({ movie }) => {
      poster_path,
    } = details;
    const posterurl = `https://image.tmdb.org/t/p/w500/${poster_path}`;
- 
-   console.log(details);
-   console.log(production_companies, spoken_languages, production_countries);
+
    const handleDetails = (id) => {
      fetch(
        `https://api.themoviedb.org/3/movie/${id}?api_key=b731525bf6922f19e1e6f4d73c910c73`
