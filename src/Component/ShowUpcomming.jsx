@@ -175,7 +175,7 @@ export const ShowUpcomming = ({ movie }) => {
                 className="btn btn-primary"
                 onClick={() => handlePlay(id)}
               >
-                Play Movie
+                Movie Trailer
               </button>
             </div>
             {/* Trailer Modal */}

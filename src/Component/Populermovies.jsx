@@ -164,7 +164,7 @@ const { title, release_date, vote_average, id } = movie;
               <button onClick={closePopup} className="btn btn-error">
                 Close
               </button>
-              <button className="btn btn-primary"  onClick={() => handlePlay(id)}>Play Movie</button>
+              <button className="btn btn-primary"  onClick={() => handlePlay(id)}>Movie Trailer</button>
             </div>
               {/* Trailer Modal */}
               {trailerUrl && (
