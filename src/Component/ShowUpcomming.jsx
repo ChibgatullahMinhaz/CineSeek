@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+const api_key = "b731525bf6922f19e1e6f4d73c910c73";
 
 export const ShowUpcomming = ({ movie }) => {
   const { title, release_date, vote_average, id } = movie;
@@ -20,7 +21,6 @@ export const ShowUpcomming = ({ movie }) => {
   } = details;
   const posterurl = `https://image.tmdb.org/t/p/w500/${poster_path}`;
 
-
   const handleDetails = (id) => {
     fetch(
       `https://api.themoviedb.org/3/movie/${id}?api_key=b731525bf6922f19e1e6f4d73c910c73`
@@ -32,6 +32,34 @@ export const ShowUpcomming = ({ movie }) => {
     setShowPopup(false);
   };
 
+  // play now
+  const fetchTrailer = async (movieId) => {
+    const url = `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${api_key}`;
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      const trailer = data.results.find(
+        (video) => video.type === "Trailer" && video.site === "YouTube"
+      );
+
+      return trailer ? `https://www.youtube.com/watch?v=${trailer.key}` : null;
+    } catch (error) {
+      console.error("Error fetching trailer:", error);
+      return null;
+    }
+  };
+
+  const [trailerUrl, setTrailerUrl] = useState(null);
+
+  const handlePlay = async (id) => {
+    const url = await fetchTrailer(id);
+    if (url) {
+      setTrailerUrl(url);
+    } else {
+      alert("Trailer not available");
+    }
+  };
   return (
     <div>
       {/* Movie card */}
@@ -102,11 +130,13 @@ export const ShowUpcomming = ({ movie }) => {
                 <div className="flex justify-center items-center gap-3 flex-wrap mt-4">
                   {details.length !== 0
                     ? production_companies.map((company) => (
-                        <h1 className="border rounded-lg p-2 text-blue-900 sm:text-white "> {company.name}</h1>
+                        <h1 className="border rounded-lg p-2 text-blue-900 sm:text-white ">
+                          {" "}
+                          {company.name}
+                        </h1>
                       ))
                     : []}
                 </div>
-                
 
                 <h2 className="text-xl text-blue-900 sm:text-orange-100 font-bold">
                   Production countries:
@@ -114,7 +144,10 @@ export const ShowUpcomming = ({ movie }) => {
                 <div className="flex justify-center items-center gap-3 flex-wrap mt-4">
                   {details.length !== 0
                     ? production_countries.map((company) => (
-                        <h1 className="border rounded-lg p-2 text-blue-900 sm:text-white "> {company.name}</h1>
+                        <h1 className="border rounded-lg p-2 text-blue-900 sm:text-white ">
+                          {" "}
+                          {company.name}
+                        </h1>
                       ))
                     : []}
                 </div>
@@ -125,20 +158,50 @@ export const ShowUpcomming = ({ movie }) => {
                 <div className="flex justify-center items-center gap-3 flex-wrap mt-4">
                   {details.length !== 0
                     ? spoken_languages.map((company) => (
-                        <h1 className="border rounded-lg p-2 text-blue-900 sm:text-white "> {company.name}</h1>
+                        <h1 className="border rounded-lg p-2 text-blue-900 sm:text-white ">
+                          {" "}
+                          {company.name}
+                        </h1>
                       ))
                     : []}
                 </div>
-
               </div>
-              
             </div>
             <div className="flex justify-between mt-4">
               <button onClick={closePopup} className="btn btn-error">
                 Close
               </button>
-              <button className="btn btn-primary">Play Movie</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => handlePlay(id)}
+              >
+                Play Movie
+              </button>
             </div>
+            {/* Trailer Modal */}
+            {trailerUrl && (
+              <dialog open className="modal modal-open bg-transparent">
+                <div className="modal-box bg-[#161616]">
+                  <h2 className="text-2xl font-bold">{title}</h2>
+                  <iframe
+                    width="100%"
+                    height="315"
+                    src={trailerUrl.replace("watch?v=", "embed/")}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allowFullScreen
+                  ></iframe>
+                  <div className="modal-action">
+                    <button
+                      onClick={() => setTrailerUrl(null)}
+                      className="btn btn-error"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </dialog>
+            )}
           </div>
         </dialog>
       )}
